@@ -1,24 +1,37 @@
+'use strict'
+
+const store = require('../store.js')
+const restaurantsTemplate = require('../templates/restaurant-listing.handlebars')
 
 const onIndexSuccess = function (response) {
-  console.log(response)
-  $('#index').text('Created!')
+  const indexSuccessHtml = restaurantsTemplate({restaurants: response.restaurants})
+  $('.content').html(indexSuccessHtml)
 }
 
 const onIndexFailure = function () {
-  $('#index').text('Something went wrong!')
+  $('#message').text('Something went wrong!')
 }
 
-const onShowSuccess = function () {
-  $('#show').html()
+const onCreateSuccess = function (response) {
+  store.restaurant = response.restaurant
+  console.log(response)
+  // const createSuccessHtml = restaurantsTemplate({restaurants: response.restaurants})
+  $('.content').html('Created!')
 }
 
-const onShowFailure = function () {
-  $('#show').html('Something went wrong!')
+const onCreateFailure = function (response) {
+  console.log(response)
+  $('#message').text('Something went wrong!')
+}
+
+const closeRestaurants = function () {
+  $('.content').empty()
 }
 
 module.exports = {
   onIndexFailure,
   onIndexSuccess,
-  onShowSuccess,
-  onShowFailure
+  onCreateSuccess,
+  onCreateFailure,
+  closeRestaurants
 }

@@ -11,17 +11,19 @@ const index = function () {
   })
 }
 
-const show = function () {
+const createRestaurant = function (data) {
+  console.log(data)
   return $.ajax({
-    url: config.apiUrl + '/restaurants' + store.restaurant.id,
-    method: 'GET',
+    url: config.apiUrl + '/restaurants',
+    method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data: data
   })
 }
 
 module.exports = {
   index,
-  show
+  createRestaurant
 }

@@ -1,0 +1,23 @@
+{{#each restaurants as |restaurant|}}
+{{log restaurant}}
+<section data-id="{{restaurant.id}}">
+  <h6>Name:</h6>
+   {{restaurant.name}}
+  <h6>Address:</h6>
+   {{restaurant.address}}
+  <h6>Description:</h6>
+  <p>
+    {{#if restaurant.description}}
+      {{restaurant.description}}
+    {{else}}
+      No description provided.
+      {{/if}}
+  </p>
+  <h6>Rating:</h6>
+  {{restaurant.rating}}
+
+  {{> partial restaurant=restaurant}}
+
+</section>
+
+{{/each}}
