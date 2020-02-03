@@ -8,16 +8,14 @@
   <h6>Description:</h6>
   <p>
     {{#if restaurant.description}}
-      {{restaurant.description}}
+      {{limit restaurant.description 15}}
     {{else}}
       No description provided.
       {{/if}}
   </p>
   <h6>Rating:</h6>
   {{restaurant.rating}}
-
-  {{> partial restaurant=restaurant}}
-
+     {{> partial restaurant=restaurant}}
 </section>
 
 {{/each}}

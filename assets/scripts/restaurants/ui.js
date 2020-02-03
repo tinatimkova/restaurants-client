@@ -16,7 +16,8 @@ const onIndexFailure = function () {
 const onCreateSuccess = function (response) {
   store.restaurant = response.restaurant
   console.log(response)
-  $('.content').html('Created!')
+  $('#message').html('Created!')
+  $('#create')[0].reset()
 }
 
 const onCreateFailure = function (response) {
@@ -32,11 +33,23 @@ const onRemoveFailure = function () {
   $('#message').text('Something went wrong!!!')
 }
 
+const onShowSuccess = function (response) {
+  console.log(response)
+  const showSuccessHtml = restaurantsTemplate({restaurant: response.restaurant})
+  $('.content').html(showSuccessHtml)
+}
+
+const onShowFailure = function () {
+  $('#message').text('Something went wrong!!!')
+}
+
 module.exports = {
   onIndexFailure,
   onIndexSuccess,
   onCreateSuccess,
   onCreateFailure,
   closeRestaurants,
-  onRemoveFailure
+  onRemoveFailure,
+  onShowFailure,
+  onShowSuccess
 }
