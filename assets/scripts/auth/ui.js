@@ -36,18 +36,35 @@ const onSignInFailure = function () {
 
 const onChangePwSuccess = function (response) {
   $('#message').html('Password changed!')
+  reset('#change-password')
 }
 
 const onChangePwFailure = function () {
   $('#message').html('Something went wrong!')
+  reset('#change-password')
 }
 
 const onSignOutSuccess = function () {
   $('#message').html('Signed Out!')
+  reset('#sign-out')
+  updateApp()
 }
 
 const onSignOutFailure = function () {
   $('#message').html('Something went wrong!')
+  reset('#sign-out')
+}
+
+const updateApp = function () {
+  $('#sign-out').hide()
+  $('#close').hide()
+  $('#update').hide()
+  $('#index').hide()
+  $('#create').hide()
+  $('#change-password').hide()
+  $('#sign-up').show()
+  $('#sign-in').show()
+  $('.content').hide()
 }
 
 module.exports = {
