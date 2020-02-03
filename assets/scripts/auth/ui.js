@@ -11,6 +11,12 @@ const onSignUpFailure = function () {
 const onSignInSuccess = function (response) {
   store.user = response.user
   $('#message').html('Signed In!')
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#sign-out').show()
+  $('#change-password').show()
+  $('#index').show()
+  $('#create').show()
 }
 
 const onSignInFailure = function () {

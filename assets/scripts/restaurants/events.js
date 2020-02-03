@@ -1,5 +1,6 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
+const store = require('../store.js')
 const getFormFields = require('./../../../lib/get-form-fields')
 
 const addHandlers = function () {
@@ -8,7 +9,8 @@ const addHandlers = function () {
   $('.content').on('click', '.remove', onRemoveRestaurant)
   $('#close').on('submit', onClose)
   $('.content').on('click', '.show', onShowRestaurant)
-  // $('.content').on('click', '.edit', onEditRestaurant)
+  $('.content').on('click', '.edit', onEditRestaurant)
+  $('#update').on('submit', onUpdateRestaurant)
 }
 
 const onIndex = function (event) {
@@ -48,10 +50,22 @@ const onShowRestaurant = function (event) {
     .catch(ui.onShowFailure)
 }
 
-// const onEditRestaurant = function (event) {
-//   event.preventDefault()
-//   $('#update').show()
-// }
+const onEditRestaurant = function (event) {
+  event.preventDefault()
+  store.id = $(event.target).data('id')
+  $('#update').show()
+  $('#create').hide()
+}
+
+const onUpdateRestaurant = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.updateRestaurant(data)
+    .then(ui.onUpdateSuccess)
+    .then(() => onIndex(event))
+    .catch(ui.onUpdateFailure)
+}
 
 module.exports = {
   addHandlers

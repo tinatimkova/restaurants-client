@@ -43,12 +43,21 @@ const showRestaurant = function (id) {
   })
 }
 
-
+const updateRestaurant = function (data, id) {
+  return $.ajax({
+    url: config.apiUrl + '/restaurants/' + store.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
 
 module.exports = {
   index,
   createRestaurant,
   removeRestaurant,
-  showRestaurant
-  // updateRestaurant
+  showRestaurant,
+  updateRestaurant
 }
