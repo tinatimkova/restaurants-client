@@ -13,7 +13,6 @@ $(() => {
   events.addHandlers()
   $('#close').hide()
   $('#update').hide()
-  $('#close').hide()
   $('#index').hide()
   $('#create').hide()
   $('#change-password').hide()

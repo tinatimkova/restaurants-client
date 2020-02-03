@@ -23,7 +23,6 @@ const onCreateSuccess = function (response) {
 }
 
 const onCreateFailure = function (response) {
-  console.log(response)
   $('#message').text('Something went wrong!')
 }
 
