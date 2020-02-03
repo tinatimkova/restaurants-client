@@ -1,5 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background-image: url('https://i.imgur.com/v9ibz8L.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 main {
   @include make-container;
   @include make-container-max-widths;

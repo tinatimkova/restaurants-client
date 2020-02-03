@@ -5,7 +5,7 @@ const getFormFields = require('./../../../lib/get-form-fields')
 const addHandlers = function () {
   $('#index').on('submit', onIndex)
   $('#create').on('submit', onCreateRestaurant)
-  // $('.content').on('click', '.show', onShow)
+  $('.content').on('click', '.remove', onRemoveRestaurant)
   $('#close').on('submit', onClose)
 }
 
@@ -28,6 +28,14 @@ const onCreateRestaurant = function (event) {
   api.createRestaurant(data)
     .then(ui.onCreateSuccess)
     .catch(ui.onCreateFailure)
+}
+
+const onRemoveRestaurant = function (event) {
+  event.preventDefault()
+  const id = $(event.target).data('id')
+  api.removeRestaurant(id)
+    .then(() => onIndex(event))
+    .catch(ui.onRemoveFailure)
 }
 
 module.exports = {

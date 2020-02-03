@@ -16,46 +16,47 @@
       <div id="message"></div>
       <form id="sign-up">
           <fieldset>
-            <legend>Sign up</legend>
-            <input name="credentials[email]" type='email' placeholder='Email'/>
+            <legend>Sign Up</legend>
+            <input name="credentials[email]" type='email' placeholder='Email'/><br>
             <input name="credentials[password]" type='password' placeholder='Password'/>
             <input name="credentials[password_confirmation]" type='password' placeholder='Password Confirmation'/>
-            <button type='submit'>Sign up</button>
+            <button type='submit' class='btn btn-dark'>Sign up</button>
           </fieldset>
       </form>
       <form id="sign-in">
           <fieldset>
-            <legend>Sign in</legend>
+            <legend>Sign In</legend>
             <input name="credentials[email]" type='email' placeholder='Email'/>
             <input name="credentials[password]" type='password' placeholder='Password'/>
-            <button type='submit'>Sign in</button>
+            <button type='submit' class='btn btn-dark'>Sign in</button>
           </fieldset>
       </form>
+      </div>
       <form id="change-password">
           <fieldset>
             <legend>Change Password</legend>
             <input name="passwords[old]" type='password' placeholder='Old Password'/>
             <input name="passwords[new]" type='password' placeholder='New Password'/>
-            <button type='submit'>Update</button>
+            <button type='submit' class='btn btn-dark'>Update</button>
          </fieldset>
       </form>
       <form id="sign-out">
           <fieldset>
-            <button type='submit'>Sign out</button>
+            <button type='submit' class="btn btn-dark">Sign out</button>
           </fieldset>
       </form>
       <form id="create">
         <fieldset>
           <legend>New Restaurant</legend>
           <input name="restaurant[name]" type='text' placeholder='Name'/>
-          <input name="restaurant[address]" type='text' placeholder='Address'/>
-          <input name="restaurant[description]" type='text' placeholder='Description'/>
-          <input name="restaurant[rating]" type='number' placeholder='Rating'/>
-          <button type='submit'>Add</button>
+          <input name="restaurant[address]" type='text' placeholder='Address'/><br>
+          <input name="restaurant[description]" type='text' placeholder='Description'/><br>
+          <input name="restaurant[rating]" type='number' placeholder='Rating'/><br>
+          <button type='submit' class="btn btn-dark">Add</button>
         </fieldset>
       </form>
       <form id="index">
-            <button type='submit'>Get all</button>
+            <button type='submit' class="btn btn-dark">Get all</button>
       </form>
       <form id="close">
             <button type='submit'>Close</button>

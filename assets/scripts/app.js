@@ -11,4 +11,5 @@ const events = require('./restaurants/events.js')
 $(() => {
   auth.addHandlers()
   events.addHandlers()
+  $('#close').hide()
 })

@@ -6,6 +6,7 @@ const restaurantsTemplate = require('../templates/restaurant-listing.handlebars'
 const onIndexSuccess = function (response) {
   const indexSuccessHtml = restaurantsTemplate({restaurants: response.restaurants})
   $('.content').html(indexSuccessHtml)
+  $('#close').show()
 }
 
 const onIndexFailure = function () {
@@ -15,7 +16,6 @@ const onIndexFailure = function () {
 const onCreateSuccess = function (response) {
   store.restaurant = response.restaurant
   console.log(response)
-  // const createSuccessHtml = restaurantsTemplate({restaurants: response.restaurants})
   $('.content').html('Created!')
 }
 
@@ -28,10 +28,15 @@ const closeRestaurants = function () {
   $('.content').empty()
 }
 
+const onRemoveFailure = function () {
+  $('#message').text('Something went wrong!!!')
+}
+
 module.exports = {
   onIndexFailure,
   onIndexSuccess,
   onCreateSuccess,
   onCreateFailure,
-  closeRestaurants
+  closeRestaurants,
+  onRemoveFailure
 }
