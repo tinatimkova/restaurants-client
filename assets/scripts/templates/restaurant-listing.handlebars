@@ -15,6 +15,8 @@
   </p>
   <h6>Rating:</h6>
   {{restaurant.rating}}
+  {{#if restaurant.editable}}
      {{> partial restaurant=restaurant}}
+       {{/if}}
 </section>
 {{/each}}
