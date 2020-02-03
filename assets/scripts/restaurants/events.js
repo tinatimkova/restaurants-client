@@ -7,7 +7,8 @@ const addHandlers = function () {
   $('#create').on('submit', onCreateRestaurant)
   $('.content').on('click', '.remove', onRemoveRestaurant)
   $('#close').on('submit', onClose)
-  $('#show').on('submit', onShowRestaurant)
+  $('.content').on('click', '.show', onShowRestaurant)
+  // $('.content').on('click', '.edit', onEditRestaurant)
 }
 
 const onIndex = function (event) {
@@ -41,12 +42,16 @@ const onRemoveRestaurant = function (event) {
 
 const onShowRestaurant = function (event) {
   event.preventDefault()
-  const form = event.target
-  const data = getFormFields(form)
-  api.showRestaurant(data)
+  const id = $(event.target).data('id')
+  api.showRestaurant(id)
     .then(ui.onShowSuccess)
     .catch(ui.onShowFailure)
 }
+
+// const onEditRestaurant = function (event) {
+//   event.preventDefault()
+//   $('#update').show()
+// }
 
 module.exports = {
   addHandlers

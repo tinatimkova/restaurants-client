@@ -33,10 +33,9 @@ const removeRestaurant = function (id) {
   })
 }
 
-const showRestaurant = function (data) {
-  console.log(data)
+const showRestaurant = function (id) {
   return $.ajax({
-    url: config.apiUrl + '/restaurants/' + data.restaurant.id,
+    url: config.apiUrl + '/restaurants/' + id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -44,9 +43,12 @@ const showRestaurant = function (data) {
   })
 }
 
+
+
 module.exports = {
   index,
   createRestaurant,
   removeRestaurant,
   showRestaurant
+  // updateRestaurant
 }
