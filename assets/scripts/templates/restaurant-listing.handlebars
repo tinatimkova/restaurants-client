@@ -1,5 +1,4 @@
 {{#each restaurants as |restaurant|}}
-{{log restaurant}}
 <section data-id="{{restaurant.id}}">
   <h6>Name:</h6>
    {{restaurant.name}}
@@ -17,6 +16,6 @@
   {{restaurant.rating}}
   {{#if restaurant.editable}}
      {{> partial restaurant=restaurant}}
-       {{/if}}
+  {{/if}}
 </section>
 {{/each}}

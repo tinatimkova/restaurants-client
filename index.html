@@ -6,13 +6,14 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Amiri|Zhi+Mang+Xing&display=swap" rel="stylesheet">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Restaurants</h1>
+      <h1>My Restaurant List</h1>
       <div id="message"></div>
       <form id="sign-up">
           <fieldset>
@@ -20,7 +21,7 @@
             <input name="credentials[email]" type='email' placeholder='Email'/><br>
             <input name="credentials[password]" type='password' placeholder='Password'/>
             <input name="credentials[password_confirmation]" type='password' placeholder='Password Confirmation'/>
-            <button type='submit' class='btn btn-dark'>Sign up</button>
+            <button type='submit' class='btn btn-dark btn-lg'>Sign Up</button>
           </fieldset>
       </form>
       <form id="sign-in">
@@ -28,20 +29,7 @@
             <legend>Sign In</legend>
             <input name="credentials[email]" type='email' placeholder='Email'/>
             <input name="credentials[password]" type='password' placeholder='Password'/>
-            <button type='submit' class='btn btn-dark'>Sign in</button>
-          </fieldset>
-      </form>
-      <form id="change-password">
-          <fieldset>
-            <legend>Change Password</legend>
-            <input name="passwords[old]" type='password' placeholder='Old Password'/>
-            <input name="passwords[new]" type='password' placeholder='New Password'/>
-            <button type='submit' class='btn btn-dark'>Update</button>
-         </fieldset>
-      </form>
-      <form id="sign-out">
-          <fieldset>
-            <button type='submit' class="btn btn-dark">Sign out</button>
+            <button type='submit' class='btn btn-dark btn-lg'>Sign In</button>
           </fieldset>
       </form>
       <form id="create">
@@ -49,26 +37,40 @@
           <legend>New Restaurant</legend>
           <input name="restaurant[name]" type='text' placeholder='Name'/>
           <input name="restaurant[address]" type='text' placeholder='Address'/><br>
-          <input name="restaurant[description]" type='text' placeholder='Description'/><br>
-          <input name="restaurant[rating]" type='number' placeholder='Rating'/><br>
-          <button type='submit' class="btn btn-dark">Add</button>
+          <textarea name="restaurant[description]" placeholder='Description'></textarea><br>
+          <input name="restaurant[rating]" type='number' min="1" max="5" placeholder='Rating'/><br>
+          <button type='submit' class="btn btn-dark btn-lg">Add</button>
         </fieldset>
       </form>
       <form id="index">
-            <button type='submit' class="btn btn-dark">Get all</button>
+            <button type='submit' class="btn btn-dark btn-lg">Show all restaurants</button>
       </form>
       <form id="close">
-            <button type='submit' class="btn btn-dark">Close</button>
+            <button type='submit' class="btn btn-outline-dark btn-lg">Close</button>
       </form>
       <form id='update'>
         <input name="restaurant[name]" type='text' placeholder='Name'/><br>
         <input name="restaurant[address]" type='text' placeholder='Address'/><br>
         <input name="restaurant[description]" type='text' placeholder='Description'/><br>
-        <input name="restaurant[rating]" type='number' placeholder='Rating'/><br>
-        <button type='submit' class="btn btn-warning">Update</button>
+        <input name="restaurant[rating]" type='number' min="1" max="5" placeholder='Rating'/><br>
+        <button type='submit' class="btn btn-dark">Update</button>
       </form>
     <main>
       <div class="content"></div>
     </main>
+    <div id='message-pw'></div>
+    <form id="change-password">
+        <fieldset>
+          <legend>Change Password</legend>
+          <input name="passwords[old]" type='password' placeholder='Old Password'/>
+          <input name="passwords[new]" type='password' placeholder='New Password'/>
+          <button type='submit' class='btn btn-dark btn-lg'>Update</button>
+       </fieldset>
+    </form>
+    <form id="sign-out">
+        <fieldset>
+          <button type='submit' class="btn btn-dark btn-lg">Sign out</button>
+        </fieldset>
+    </form>
     </body>
 </html>

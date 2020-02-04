@@ -35,13 +35,19 @@ const onSignInFailure = function () {
 }
 
 const onChangePwSuccess = function (response) {
-  $('#message').html('Password changed!')
-  reset('#change-password')
+  $('#message-pw').html('Password changed!')
+  setTimeout(function () {
+    $('#message-pw').html('')
+  }, 1000)
+  $('#change-password')[0].reset()
 }
 
 const onChangePwFailure = function () {
-  $('#message').html('Something went wrong!')
-  reset('#change-password')
+  $('#message-pw').html('Password changed!')
+  setTimeout(function () {
+    $('#message-pw').html('')
+  }, 1000)
+  $('#change-password')[0].reset()
 }
 
 const onSignOutSuccess = function () {
@@ -64,7 +70,7 @@ const updateApp = function () {
   $('#change-password').hide()
   $('#sign-up').show()
   $('#sign-in').show()
-  $('.content').hide()
+  $('.content').empty()
 }
 
 module.exports = {
