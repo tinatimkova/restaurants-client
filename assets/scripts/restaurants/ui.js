@@ -44,6 +44,7 @@ const onShowSuccess = function (response) {
   $('#create').hide()
   $('#update').hide()
   $('#index').show()
+  $('#close').show()
 }
 
 const onShowFailure = function () {
