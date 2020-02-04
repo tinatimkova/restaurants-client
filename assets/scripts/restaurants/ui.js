@@ -20,6 +20,7 @@ const onCreateSuccess = function (response) {
   $('#create')[0].reset()
   const showSuccessHtml = restaurantTemplate({restaurant: response.restaurant})
   $('.content').html(showSuccessHtml)
+  $('#index').show()
 }
 
 const onCreateFailure = function (response) {
