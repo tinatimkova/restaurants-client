@@ -12,7 +12,6 @@ const index = function () {
 }
 
 const createRestaurant = function (data) {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/restaurants',
     method: 'POST',

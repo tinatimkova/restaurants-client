@@ -43,7 +43,7 @@ const onChangePwSuccess = function (response) {
 }
 
 const onChangePwFailure = function () {
-  $('#message-pw').html('Password changed!')
+  $('#message-pw').html('Something went wrong!')
   setTimeout(function () {
     $('#message-pw').html('')
   }, 1000)
