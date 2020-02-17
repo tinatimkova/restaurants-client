@@ -9,6 +9,7 @@ const onIndexSuccess = function (response) {
   $('.content').html(indexSuccessHtml)
   $('#close').show()
   $('#index').hide()
+  $('#update').hide()
 }
 
 const onIndexFailure = function () {
