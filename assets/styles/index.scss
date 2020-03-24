@@ -8,7 +8,6 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: 'Amiri', serif;
-  text-align: center;
 }
 
 h1 {
@@ -31,11 +30,18 @@ legend {
 input {
   margin: 10px;
   width: 10em;
+  &.star {
+    width: auto;
+  }
 }
 
 form {
   margin: 20px;
   font-size: 1.5em;
+  text-align: center;
+  & .rating {
+    text-align: left;
+  }
 }
 
 main {
@@ -78,48 +84,97 @@ main {
 }
 
 .rating {
-  transform: rotateY(180deg);
+  position: relative;
+  top: 50%;
+  left: 47%;
+  transform: translate(-50%, -50%) rotateY(180deg);
   display: flex;
-  flex-direction: row;
+  margin-top: 40px;
   justify-content: center;
-  padding-top: 20px;
-  padding-right: 20px;
-}
+  & input {
+    display: none;
+  }
 
-.rating input {
-  display: none;
-}
-
-.rating label {
-    display: block;
+  & label {
     cursor: pointer;
-    width: 40px;
+    display: block;
+    width: 50px;
+  }
+
+  & label:before {
+    content: '\f005';
+    font-family: fontAwesome;
+    position: relative;
+    display: block;
+    color: #101010;
+  }
+
+  & label:after {
+    content: '\f005';
+    font-family: fontAwesome;
+    display: block;
+    color: #FFD700;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: .5s;
+    text-shadow: 0 2px 5px rgba(0,0,0,.5)
+  }
+  & input:checked ~ label:after,
+  label:hover:after,
+  label:hover ~ label:after
+  {
+    opacity: 1;
+  }
+
 }
 
-.rating label:before{
-  content: '\f005';
-  position: absolute;
-  font-family: fontAwesome;
-  font-size: 20px;
-  color: #101010;
-}
 
-.rating label:after{
-  content: '\f005';
-  position: absolute;
-  font-family: fontAwesome;
-  font-size: 20px;
-  color: #1f9cff;
-  opacity: 0;
-  transition: .5s;
-  text-shadow: 0 2px 5px rgba(0,0,0,.5);
-}
 
-.rating label:hover:after,
-.rating input:checked ~ label:after
-{
-  opacity: 1;
-}
+
+// .rating {
+//   transform: rotateY(180deg);
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   padding-top: 20px;
+//   padding-right: 20px;
+// }
+//
+// .rating input {
+//   display: none;
+// }
+//
+// .rating label {
+//     display: block;
+//     cursor: pointer;
+//     width: 40px;
+// }
+//
+// .rating label:before{
+//   content: '\f005';
+//   position: absolute;
+//   font-family: fontAwesome;
+//   font-size: 20px;
+//   color: #101010;
+// }
+//
+// .rating label:after{
+//   content: '\f005';
+//   position: absolute;
+//   font-family: fontAwesome;
+//   font-size: 20px;
+//   color: #1f9cff;
+//   opacity: 0;
+//   transition: .5s;
+//   text-shadow: 0 2px 5px rgba(0,0,0,.5);
+// }
+//
+//
+// .rating label:hover:after,
+// .rating > input:checked ~ label:after{
+//   opacity: 1;
+// }
 
 #message,
 #message-pw {
