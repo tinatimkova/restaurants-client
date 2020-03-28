@@ -71,7 +71,7 @@ const onUpdateRestaurant = function (event) {
 const onClickStar = function (event) {
   event.preventDefault()
   const labelID = $(this).attr('for')
-  const star = $('#' + labelID).trigger('click')
+  const star = $('.' + labelID).trigger('click')
   store.rating = $(star).data('id')
 }
 
