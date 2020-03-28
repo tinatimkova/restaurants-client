@@ -18,7 +18,14 @@ const createRestaurant = function (data) {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: data
+    data: {
+      'restaurant': {
+        'name': data.restaurant.name,
+        'address': data.restaurant.address,
+        'description': data.restaurant.description,
+        'rating': store.rating
+      }
+    }
   })
 }
 
@@ -49,7 +56,14 @@ const updateRestaurant = function (data, id) {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: data
+    data: {
+      'restaurant': {
+        'name': data.restaurant.name,
+        'address': data.restaurant.address,
+        'description': data.restaurant.description,
+        'rating': store.rating
+      }
+    }
   })
 }
 
