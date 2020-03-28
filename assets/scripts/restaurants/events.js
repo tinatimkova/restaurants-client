@@ -11,6 +11,7 @@ const addHandlers = function () {
   $('.content').on('click', '.show', onShowRestaurant)
   $('.content').on('click', '.edit', onEditRestaurant)
   $('#update').on('submit', onUpdateRestaurant)
+  $('label').on('click', onClickStar)
 }
 
 const onIndex = function (event) {
@@ -65,6 +66,13 @@ const onUpdateRestaurant = function (event) {
     .then(ui.onUpdateSuccess)
     .then(() => onIndex(event))
     .catch(ui.onUpdateFailure)
+}
+
+const onClickStar = function (event) {
+  event.preventDefault()
+  const labelID = $(this).attr('for')
+  const star = $('.' + labelID).trigger('click')
+  store.rating = $(star).data('id')
 }
 
 module.exports = {
