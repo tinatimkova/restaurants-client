@@ -112,7 +112,7 @@ main {
     content: '\f005';
     font-family: fontAwesome;
     display: block;
-    color: #FFD700;
+    color: #ffcb00;
     position: absolute;
     top: 0;
     opacity: 0;
@@ -128,6 +128,10 @@ main {
 
 }
 
+.checked {
+  color: #ffcb00;
+  text-shadow: 0 2px 5px rgba(0,0,0,.5);
+}
 
 #message,
 #message-pw {
