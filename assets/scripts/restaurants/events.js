@@ -54,6 +54,9 @@ const onShowRestaurant = function (event) {
 const onEditRestaurant = function (event) {
   event.preventDefault()
   store.id = $(event.target).data('id')
+  $('#name').val(store.restaurant.name)
+  $('#address').val(store.restaurant.address)
+  $('#description').val(store.restaurant.description)
   $('#update').show()
   $('#create').hide()
 }

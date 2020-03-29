@@ -37,10 +37,10 @@
       <form id="create">
         <fieldset>
           <legend>New Restaurant</legend>
-          <input name="restaurant[name]" type='text' placeholder='Name'/>
+          <input name="restaurant[name]" type='text' placeholder='Name'/><br>
           <input name="restaurant[address]" type='text' placeholder='Address'/><br>
           <textarea name="restaurant[description]" placeholder='Description'></textarea><br>
-          <h3>Rating:</h3>
+          <h4>Rating:</h4>
           <div class='rating'>
             <input type='radio' name="restaurant[rating]" data-id='5' class='star1'><label for='star1'></label>
             <input type='radio' name="restaurant[rating]" data-id='4' class='star2'><label for='star2'></label>
@@ -58,15 +58,15 @@
             <button type='submit' class="btn btn-outline-dark btn-lg">Close</button>
       </form>
       <form id='update'>
-        <input name="restaurant[name]" type='text' placeholder='Name'/><br>
-        <input name="restaurant[address]" type='text' placeholder='Address'/><br>
-        <input name="restaurant[description]" type='text' placeholder='Description'/><br>
+        <input id='name' name="restaurant[name]" type='text' placeholder='Name'/><br>
+        <input id='address' name="restaurant[address]" type='text' placeholder='Address'/><br>
+        <input id='description' name="restaurant[description]" type='text' placeholder='Description'/><br>
         <div class='rating'>
-          <input type='radio' name="restaurant[rating]" data-id='5' class='star1'><label for='star1'></label>
-          <input type='radio' name="restaurant[rating]" data-id='4' class='star2'><label for='star2'></label>
+          <input type='radio' name="restaurant[rating]" data-id='5' class='star5'><label for='star5'></label>
+          <input type='radio' name="restaurant[rating]" data-id='4' class='star4'><label for='star4'></label>
           <input type='radio' name="restaurant[rating]" data-id='3' class='star3'><label for='star3'></label>
-          <input type='radio' name="restaurant[rating]" data-id='2' class='star4'><label for='star4'></label>
-          <input type='radio' name="restaurant[rating]" data-id='1' class='star5'><label for='star5'></label>
+          <input type='radio' name="restaurant[rating]" data-id='2' class='star2'><label for='star2'></label>
+          <input type='radio' name="restaurant[rating]" data-id='1' class='star1'><label for='star1'></label>
         </div>
         <button type='submit' class="btn btn-dark">Update</button>
       </form>

@@ -42,6 +42,7 @@ const onRemoveFailure = function () {
 
 const onShowSuccess = function (response) {
   const showSuccessHtml = restaurantTemplate({restaurant: response.restaurant})
+  store.restaurant = response.restaurant
   $('.content').html(showSuccessHtml)
   $('#create').hide()
   $('#update').hide()
