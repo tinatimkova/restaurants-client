@@ -15,25 +15,39 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link" id="nav-signup-tab" data-toggle="tab" href="#sign-up-tab" role="tab" aria-controls="nav-sign-up" aria-selected="false">Sign Up</a>
+          <a class="nav-item nav-link active" id="nav-signin-tab" data-toggle="tab" href="#sign-in-tab" role="tab" aria-controls="sign-in" aria-selected="true">Sign In</a>
+          <!-- <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"></a> -->
+        </div>
+     </nav>
       <h1>My Dining List</h1>
       <div id="message"></div>
-      <form id="sign-up">
-          <fieldset>
-            <legend>Sign Up</legend>
-            <input name="credentials[email]" type='email' placeholder='Email'/><br>
-            <input name="credentials[password]" type='password' placeholder='Password'/>
-            <input name="credentials[password_confirmation]" type='password' placeholder='Password Confirmation'/>
-            <button type='submit' class='btn btn-dark btn-lg'>Sign Up</button>
-          </fieldset>
-      </form>
-      <form id="sign-in">
-          <fieldset>
-            <legend>Sign In</legend>
-            <input name="credentials[email]" type='email' placeholder='Email'/>
-            <input name="credentials[password]" type='password' placeholder='Password'/>
-            <button type='submit' class='btn btn-dark btn-lg'>Sign In</button>
-          </fieldset>
-      </form>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade" id="sign-up-tab" role="tabpanel" aria-labelledby="nav-sign-up-tab">
+          <form id="sign-up">
+              <fieldset>
+                <legend>Sign Up</legend>
+                <input name="credentials[email]" type='email' placeholder='Email'/><br>
+                <input name="credentials[password]" type='password' placeholder='Password'/>
+                <input name="credentials[password_confirmation]" type='password' placeholder='Password Confirmation'/>
+                <button type='submit' class='btn btn-dark btn-lg'>Sign Up</button>
+              </fieldset>
+          </form>
+        </div>
+        <div class="tab-pane fade show active" id="sign-in-tab" role="tabpanel" aria-labelledby="nav-sign-in-tab">
+          <form id="sign-in">
+              <fieldset>
+                <legend>Sign In</legend>
+                <input name="credentials[email]" type='email' placeholder='Email'/>
+                <input name="credentials[password]" type='password' placeholder='Password'/>
+                <button type='submit' class='btn btn-dark btn-lg'>Sign In</button>
+              </fieldset>
+          </form>
+        </div>
+        <!-- <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div> -->
+      </div>
       <form id="create">
         <fieldset>
           <legend>New Restaurant</legend>

@@ -137,3 +137,22 @@ main {
 #message-pw {
   font-size: 1.5em;
 }
+
+nav {
+  width: 100%;
+  line-height: 1.5;
+  background: #343a40;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  background: rgba(0,0,0,.5);
+  color: white;
+  font-family: 'Zhi Mang Xing', cursive;
+}
+
+a, a:hover {
+  color: white;
+  font-family: 'Zhi Mang Xing', cursive;
+  font-size: 1.3em;
+}
