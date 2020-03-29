@@ -21,10 +21,8 @@ const onSignInSuccess = function (response) {
   store.user = response.user
   $('#message').html('Signed In!')
   reset('#sign-in')
-  $('#sign-up').hide()
-  $('#sign-in').hide()
-  $('#sign-out').show()
-  $('#change-password').show()
+  $('#sign-up, #sign-in, #nav-signup, #nav-signin').hide()
+  $('#sign-out, #change-password, #nav-changePW, #nav-home, #home-tab').show()
   $('#index').show()
   $('#create').show()
 }
@@ -62,14 +60,12 @@ const onSignOutFailure = function () {
 }
 
 const updateApp = function () {
-  $('#sign-out').hide()
+  $('#sign-out, #nav-changePW, #nav-home, #change-password').hide()
   $('#close').hide()
   $('#update').hide()
   $('#index').hide()
   $('#create').hide()
-  $('#change-password').hide()
-  $('#sign-up').show()
-  $('#sign-in').show()
+  $('#sign-up, #sign-in, #nav-signup, #nav-signin').show()
   $('.content').empty()
 }
 
