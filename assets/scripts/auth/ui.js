@@ -50,7 +50,9 @@ const onChangePwFailure = function () {
 
 const onSignOutSuccess = function () {
   $('#message').html('Signed Out!')
-  reset('#sign-out')
+  setTimeout(function () {
+    $('#message').html('')
+  }, 1000)
   updateApp()
 }
 

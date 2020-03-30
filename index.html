@@ -22,6 +22,7 @@
           <a class="nav-item nav-link active" id="nav-signin" data-toggle="tab" href="#sign-in-tab" role="tab" aria-controls="nav-sign-in" aria-selected="true">Sign In</a>
           <a class="nav-item nav-link" id="nav-changePW" data-toggle="tab" href="#change-pw-tab" role="tab" aria-controls="nav-change-pw" aria-selected="false">Change Password</a>
           <a class="nav-item nav-link" id="nav-home" data-toggle="tab" href="#home-tab" role="tab" aria-controls="nav-home" aria-selected="false">Home</a>
+          <a class="nav-item nav-link" id="sign-out" data-toggle="tab" href="#" role="tab" aria-controls="nav-sign-out" aria-selected="false">Sign Out</a>
         </div>
      </nav>
       <h1>My Dining List</h1>
@@ -80,9 +81,6 @@
       <form id="index">
             <button type='submit' class="btn btn-dark btn-lg">Show all restaurants</button>
       </form>
-      <form id="close">
-            <button type='submit' class="btn btn-outline-dark btn-lg">Close</button>
-      </form>
       <form id='update'>
         <input id='name' name="restaurant[name]" type='text' placeholder='Name'/><br>
         <input id='address' name="restaurant[address]" type='text' placeholder='Address'/><br>
@@ -96,14 +94,12 @@
         </div>
         <button type='submit' class="btn btn-dark">Update</button>
       </form>
-    <main>
+      <main>
       <div class="content"></div>
-    </main>
-    <form id="sign-out">
-        <fieldset>
-          <button type='submit' class="btn btn-dark btn-lg">Sign out</button>
-        </fieldset>
-    </form>
+      <form id="close">
+          <button type='submit' class="btn btn-outline-dark btn-lg">Close</button>
+      </form>
+      </main>
     </div>
   </div>
     </body>

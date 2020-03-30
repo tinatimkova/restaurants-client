@@ -8,8 +8,7 @@ const onIndexSuccess = function (response) {
   const indexSuccessHtml = restaurantsTemplate({restaurants: response.restaurants})
   $('.content').html(indexSuccessHtml)
   $('#close').show()
-  $('#index').hide()
-  $('#update').hide()
+  $('#index, #update, #create').hide()
 }
 
 const onIndexFailure = function () {
@@ -44,10 +43,8 @@ const onShowSuccess = function (response) {
   const showSuccessHtml = restaurantTemplate({restaurant: response.restaurant})
   store.restaurant = response.restaurant
   $('.content').html(showSuccessHtml)
-  $('#create').hide()
-  $('#update').hide()
-  $('#index').show()
-  $('#close').show()
+  $('#create, #update').hide()
+  $('#index, #close').show()
 }
 
 const onShowFailure = function () {
