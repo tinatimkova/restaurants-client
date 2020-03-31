@@ -4,8 +4,6 @@ body {
   background-image: url('https://i.imgur.com/v9ibz8L.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   font-family: 'Amiri', serif;
 }
@@ -14,6 +12,7 @@ h1 {
   font-family: 'Zhi Mang Xing', cursive;
   font-size: 5em;
   margin: 25px;
+  text-align: center;
 }
 
 button {
@@ -39,9 +38,6 @@ form {
   margin: 20px;
   font-size: 1.5em;
   text-align: center;
-  & .rating {
-    text-align: left;
-  }
 }
 
 main {
@@ -73,18 +69,18 @@ main {
       margin: 2px;
       font-size: 0.8em !important;
     }
+
   }
 
   .content {
     @include make-row;
-
   }
 }
 
 .rating {
   position: relative;
   top: 50%;
-  left: 47%;
+  left: 49%;
   transform: translate(-50%, -50%) rotateY(180deg);
   display: flex;
   margin-top: 40px;
@@ -95,7 +91,7 @@ main {
 
   & label {
     cursor: pointer;
-    display: block;
+    display: flex;
     width: 50px;
   }
 
@@ -103,14 +99,14 @@ main {
     content: '\f005';
     font-family: fontAwesome;
     position: relative;
-    display: block;
     color: #101010;
   }
 
   & label:after {
     content: '\f005';
     font-family: fontAwesome;
-    display: block;
+    display: flex;
+    justify-content: center;
     color: #ffcb00;
     position: absolute;
     top: 0;
@@ -135,6 +131,7 @@ main {
 #message,
 #message-pw {
   font-size: 1.5em;
+  text-align: center;
 }
 
 nav {
