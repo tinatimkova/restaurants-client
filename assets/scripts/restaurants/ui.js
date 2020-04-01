@@ -9,6 +9,7 @@ const onIndexSuccess = function (response) {
   $('.content').html(indexSuccessHtml)
   $('#close').show()
   $('#index, #update, #create').hide()
+  $('.rating').find('input[type=radio]').prop('checked', false)
 }
 
 const onIndexFailure = function () {
@@ -18,6 +19,7 @@ const onIndexFailure = function () {
 const onCreateSuccess = function (response) {
   store.restaurant = response.restaurant
   $('#create')[0].reset()
+  $('.rating').find('input[type=radio]').prop('checked', false)
   const showSuccessHtml = restaurantTemplate({restaurant: response.restaurant})
   $('.content').html(showSuccessHtml)
   $('#index').show()
@@ -59,6 +61,7 @@ const onUpdateSuccess = function (response) {
   $('#update')[0].reset()
   $('#update').hide()
   $('#index').show()
+  $('.rating').find('input[type=radio]').prop('checked', false)
 }
 
 module.exports = {
