@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>My Dining List</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta property="og:image" content="data/restaurant-icon.jpg">
+
+      <!-- Do not add `link` tags-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Amiri|Zhi+Mang+Xing&display=swap" rel="stylesheet">
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+      <!-- Do not add `script` tags-->
+
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <nav>
+        <div class="nav nav-tabs" role="tablist">
+          <a class="nav-item nav-link" id="nav-signup" data-toggle="tab" href="#sign-up-tab" role="tab" aria-controls="nav-sign-up" aria-selected="false">Sign Up</a>
+          <a class="nav-item nav-link active" id="nav-signin" data-toggle="tab" href="#sign-in-tab" role="tab" aria-controls="nav-sign-in" aria-selected="true">Sign In</a>
+          <a class="nav-item nav-link" id="nav-changePW" data-toggle="tab" href="#change-pw-tab" role="tab" aria-controls="nav-change-pw" aria-selected="false">Change Password</a>
+          <a class="nav-item nav-link" id="nav-home" data-toggle="tab" href="#home-tab" role="tab" aria-controls="nav-home" aria-selected="false">Home</a>
+          <a class="nav-item nav-link" id="sign-out" data-toggle="tab" href="#" role="tab" aria-controls="nav-sign-out" aria-selected="false">Sign Out</a>
+        </div>
+     </nav>
+      <h1>My Dining List</h1>
+      <div id="message"></div>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade" id="sign-up-tab" role="tabpanel" aria-labelledby="nav-sign-up-tab">
+          <form id="sign-up">
+              <fieldset>
+                <legend>Sign Up</legend>
+                <input name="credentials[email]" type='email' placeholder='Email'/><br>
+                <input name="credentials[password]" type='password' placeholder='Password'/>
+                <input name="credentials[password_confirmation]" type='password' placeholder='Password Confirmation'/>
+                <button type='submit' class='btn btn-dark btn-lg'>Sign Up</button>
+              </fieldset>
+          </form>
+        </div>
+        <div class="tab-pane fade show active" id="sign-in-tab" role="tabpanel" aria-labelledby="nav-sign-in-tab">
+          <form id="sign-in">
+              <fieldset>
+                <legend>Sign In</legend>
+                <input name="credentials[email]" type='email' placeholder='Email'/>
+                <input name="credentials[password]" type='password' placeholder='Password'/>
+                <button type='submit' class='btn btn-dark btn-lg'>Sign In</button>
+              </fieldset>
+          </form>
+        </div>
+        <div class="tab-pane fade" id="change-pw-tab" role="tabpanel" aria-labelledby="nav-change-pw-tab">
+          <div id='message-pw'></div>
+          <form id="change-password">
+              <fieldset>
+                <legend>Change Password</legend>
+                <input name="passwords[old]" type='password' placeholder='Old Password'/>
+                <input name="passwords[new]" type='password' placeholder='New Password'/>
+                <button type='submit' class='btn btn-dark btn-lg'>Update</button>
+             </fieldset>
+          </form>
+        </div>
+      <div class='tab-pane fade' id='home-tab' role='tabpanel' aria-labelledby="nav-home-tab">
+      <form id="create">
+        <fieldset>
+          <legend>New Restaurant</legend>
+          <input name="restaurant[name]" type='text' placeholder='Name'/><br>
+          <input name="restaurant[address]" type='text' placeholder='Address'/><br>
+          <textarea name="restaurant[description]" placeholder='Description'></textarea><br>
+          <h4>Rating:</h4>
+          <div class='rating'>
+            <input type='radio' name="restaurant[rating]" data-id='5' class='star1'><label for='star1'></label>
+            <input type='radio' name="restaurant[rating]" data-id='4' class='star2'><label for='star2'></label>
+            <input type='radio' name="restaurant[rating]" data-id='3' class='star3'><label for='star3'></label>
+            <input type='radio' name="restaurant[rating]" data-id='2' class='star4'><label for='star4'></label>
+            <input type='radio' name="restaurant[rating]" data-id='1' class='star5'><label for='star5'></label>
+          </div>
+          <button type='submit' class="btn btn-dark btn-lg">Add</button>
+        </fieldset>
+      </form>
+      <form id="index">
+            <button type='submit' class="btn btn-dark btn-lg">Show all restaurants</button>
+      </form>
+      <form id='update'>
+        <input id='name' name="restaurant[name]" type='text' placeholder='Name'/><br>
+        <input id='address' name="restaurant[address]" type='text' placeholder='Address'/><br>
+        <input id='description' name="restaurant[description]" type='text' placeholder='Description'/><br>
+        <div class='rating'>
+          <input type='radio' name="restaurant[rating]" data-id='5' class='star1'><label for='star1'></label>
+          <input type='radio' name="restaurant[rating]" data-id='4' class='star2'><label for='star2'></label>
+          <input type='radio' name="restaurant[rating]" data-id='3' class='star3'><label for='star3'></label>
+          <input type='radio' name="restaurant[rating]" data-id='2' class='star4'><label for='star4'></label>
+          <input type='radio' name="restaurant[rating]" data-id='1' class='star5'><label for='star5'></label>
+        </div>
+        <button type='submit' class="btn btn-dark">Update</button>
+      </form>
+      <main>
+      <div class="content"></div>
+      <form id="close">
+          <button type='submit' class="btn btn-outline-dark btn-lg">Close</button>
+      </form>
+      </main>
+    </div>
+  </div>
+    </body>
+</html>
